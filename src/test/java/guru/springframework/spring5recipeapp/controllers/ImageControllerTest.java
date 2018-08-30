@@ -45,7 +45,7 @@ public class ImageControllerTest {
 
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
-        recipeCommand.setId(7L);
+        recipeCommand.setId("7");
 
         when(recipeService.findCommandById(anyLong())).thenReturn(recipeCommand);
 
@@ -75,7 +75,7 @@ public class ImageControllerTest {
 
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
-        recipeCommand.setId(4444L);
+        recipeCommand.setId("4444");
 
         String s = "fake image text";
         Byte[] bytesBoxed = new Byte[s.getBytes().length];

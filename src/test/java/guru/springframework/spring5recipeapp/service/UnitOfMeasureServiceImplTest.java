@@ -38,11 +38,11 @@ public class UnitOfMeasureServiceImplTest {
         //given
         Set<UniteOfMesure> unitOfMeasures = new HashSet<>();
         UniteOfMesure uom1 = new UniteOfMesure();
-        uom1.setId(1L);
+        uom1.setId("1");
         unitOfMeasures.add(uom1);
 
         UniteOfMesure uom2 = new UniteOfMesure();
-        uom2.setId(2L);
+        uom2.setId("2");
         unitOfMeasures.add(uom2);
 
         when(unitOfMeasureRepository.findAll()).thenReturn(unitOfMeasures);

@@ -12,7 +12,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
 
 
     public static final String DESCRIPTION = "description";
-    public static final Long LONG_VALUE = new Long(1L);
+    public static final String STRING_VALUE = "1";
 
     UnitOfMeasureToUnitOfMeasureCommand converter;
 
@@ -35,13 +35,13 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
     public void convert() throws Exception {
         //given
         UniteOfMesure uom = new UniteOfMesure();
-        uom.setId(LONG_VALUE);
+        uom.setId(STRING_VALUE);
         uom.setUom(DESCRIPTION);
         //when
         UnitOfMesureCommand uomc = converter.convert(uom);
 
         //then
-        assertEquals(LONG_VALUE, uomc.getId());
+        assertEquals(STRING_VALUE, uomc.getId());
         assertEquals(DESCRIPTION, uomc.getUom());
     }
 

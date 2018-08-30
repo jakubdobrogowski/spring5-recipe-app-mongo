@@ -72,8 +72,8 @@ public class IngredientControllerTest {
 
         //given
         IngredientCommand ingredientCommand = new IngredientCommand();
-        ingredientCommand.setId(2L);
-        ingredientCommand.setRecipeId(3L);
+        ingredientCommand.setId("2");
+        ingredientCommand.setRecipeId("3");
 
         //when
         when(ingredientService.findIngredientCommandByRecipeIdAndId(anyLong(), anyLong())).thenReturn(ingredientCommand);
@@ -90,8 +90,8 @@ public class IngredientControllerTest {
 
         //given
         IngredientCommand ingredientCommand = new IngredientCommand();
-        ingredientCommand.setId(2L);
-        ingredientCommand.setRecipeId(3L);
+        ingredientCommand.setId("2");
+        ingredientCommand.setRecipeId("3");
 
         //when
         when(ingredientService.findIngredientCommandByRecipeIdAndId(anyLong(), anyLong())).thenReturn(ingredientCommand);
@@ -110,7 +110,7 @@ public class IngredientControllerTest {
 
         //given
         IngredientCommand ingredientCommand = new IngredientCommand();
-        long id = 4434L;
+        String id = "4434";
         ingredientCommand.setId(id);
 
         //then
@@ -139,8 +139,8 @@ public class IngredientControllerTest {
 
         //given
         IngredientCommand ingredientCommand = new IngredientCommand();
-        ingredientCommand.setId(22L);
-        ingredientCommand.setRecipeId(33L);
+        ingredientCommand.setId("22");
+        ingredientCommand.setRecipeId("33");
 
         //when
         when(ingredientService.saveIngredientCommand(any())).thenReturn(ingredientCommand);

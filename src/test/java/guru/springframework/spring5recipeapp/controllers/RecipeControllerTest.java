@@ -51,7 +51,7 @@ public class RecipeControllerTest {
 
         //given
         Recipe recipe = new Recipe();
-        recipe.setId(2L);
+        recipe.setId("2");
 
         //when
         when(recipeServiceImpl.findById(anyLong())).thenReturn(recipe);
@@ -68,7 +68,7 @@ public class RecipeControllerTest {
 
         //given
         Recipe recipe = new Recipe();
-        recipe.setId(2L);
+        recipe.setId("2");
 
         //when
         when(recipeServiceImpl.findById(anyLong())).thenThrow(NotFoundException.class);
@@ -84,7 +84,7 @@ public class RecipeControllerTest {
 
         //given
         Recipe recipe = new Recipe();
-        recipe.setId(244L);
+        recipe.setId("244");
 
         //when
         when(recipeServiceImpl.findById(anyLong())).thenThrow(NotFoundException.class);
@@ -122,7 +122,7 @@ public class RecipeControllerTest {
 
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
-        recipeCommand.setId(2L);
+        recipeCommand.setId("2");
 
         //when
         when(recipeServiceImpl.saveRecipeCommand(any())).thenReturn(recipeCommand);
@@ -143,7 +143,7 @@ public class RecipeControllerTest {
 
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
-        recipeCommand.setId(2L);
+        recipeCommand.setId("2");
 
         //when
         when(recipeServiceImpl.saveRecipeCommand(any())).thenReturn(recipeCommand);
@@ -163,7 +163,7 @@ public class RecipeControllerTest {
 
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
-        recipeCommand.setId(3L);
+        recipeCommand.setId("3");
 
         //when
         when(recipeServiceImpl.findCommandById(anyLong())).thenReturn(recipeCommand);

@@ -1,22 +1,18 @@
 package guru.springframework.spring5recipeapp.model;
 
-import guru.springframework.spring5recipeapp.infrastructure.BaseEntity;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+
 @Setter
 @Getter
 @NoArgsConstructor
-public class Recipe //extends BaseEntity
- {
+public class Recipe {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+    private String id;
 
     private String description;
     private Integer prepTime;
@@ -25,25 +21,21 @@ public class Recipe //extends BaseEntity
     private String source;
     private String url;
 
-    @Lob
+
     private String directions;
 
-    @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
 
-    @ManyToMany
-    @JoinTable(name = "recipe_category",
-            joinColumns = @JoinColumn(name = "recipe_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
+
     private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+
     private Set<Ingredient> ingredients = new HashSet<>();
 
-    @Lob
+
     private Byte[] image;
 
-    @OneToOne(cascade = CascadeType.ALL)
+
     private Notes notes;
 
 
@@ -54,7 +46,7 @@ public class Recipe //extends BaseEntity
         }
     }
 
-    public void addIngredient(Ingredient ingredient){
+    public void addIngredient(Ingredient ingredient) {
 
         ingredient.setRecipe(this);
         ingredients.add(ingredient);

@@ -63,16 +63,16 @@ public class RecipeServiceImplTest {
     public void testFindById() {
 
         //given
-        Long id = 2L;
+        String id = "2";
         Recipe recipe = new Recipe();
-        recipe.setId(2L);
+        recipe.setId("2");
         Optional<Recipe> recipeOptional = Optional.of(recipe);
 
         //when
         when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
 
         //then
-        assertNotNull("Null Recipe returned", recipeServiceImpl.findById(id));
+        assertNotNull("Null Recipe returned", recipeServiceImpl.findById(Long.valueOf(id)));
         verify(recipeRepository, times(0)).findAll();
         verify(recipeRepository, times(1)).findById(anyLong());
     }
@@ -98,10 +98,10 @@ public class RecipeServiceImplTest {
 
         //given
         RecipeCommand recipeCommand = new RecipeCommand();
-        recipeCommand.setId(3221L);
+        recipeCommand.setId("3221");
 
         Recipe recipe = new Recipe();
-        recipe.setId(3221L);
+        recipe.setId("3221");
 
         //when
         when(recipeRepository.findById(anyLong())).thenReturn(Optional.of(recipe));
@@ -117,11 +117,11 @@ public class RecipeServiceImplTest {
 
         //given
         Recipe recipe = new Recipe();
-        long id = 332L;
+        String id = "332";
         recipe.setId(id);
 
         //when
-        recipeServiceImpl.deleteRecipe(id);
+        recipeServiceImpl.deleteRecipe(Long.valueOf(id));
 
         //no 'when', since method has void return type
 

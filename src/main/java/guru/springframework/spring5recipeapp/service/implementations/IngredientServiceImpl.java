@@ -67,7 +67,7 @@ public class IngredientServiceImpl implements IngredientService {
     @Override
     public IngredientCommand saveIngredientCommand(IngredientCommand ingredientCommand) {
 
-        Optional<Recipe> recipeOptional = recipeRepository.findById(ingredientCommand.getRecipeId());
+        Optional<Recipe> recipeOptional = recipeRepository.findById(Long.valueOf(ingredientCommand.getRecipeId())); //change valueOF
         if (!recipeOptional.isPresent()) {
 
             //todo toss error if not found!
@@ -167,7 +167,7 @@ public class IngredientServiceImpl implements IngredientService {
 
     private UniteOfMesure getUom(IngredientCommand ingredientCommand) {
         return unitOfMesureRepository
-                .findById(ingredientCommand.getId())
+                .findById(Long.valueOf(ingredientCommand.getRecipeId())) //change valueOF
                 .orElseThrow(() -> new RuntimeException("Unit Of Measure Not Found")); //todo adress this
     }
 }

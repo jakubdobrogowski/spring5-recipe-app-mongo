@@ -69,7 +69,7 @@ public class IngredientController {
     private IngredientCommand getBrandNewIngredientCommand(@PathVariable String recipeId) {
 
         IngredientCommand ingredientCommand = new IngredientCommand();
-        ingredientCommand.setRecipeId(Long.valueOf(recipeId));
+        ingredientCommand.setRecipeId(recipeId);
         //init uom
         ingredientCommand.setUom(new UnitOfMesureCommand());
         return ingredientCommand;
